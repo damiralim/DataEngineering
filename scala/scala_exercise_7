@@ -1,0 +1,13 @@
+object StringProcessor {
+// Изменена функция processStrings с целью замены цикла на применение map
+// для последовательного преобразования в верхний регистр предварительно
+// отфильтрованных по длине строк.
+ def processStrings(strings: List[String]): List[String] =
+    strings.filter(_.length > 3).map(_.toUpperCase) // Реализована цепочка методов
+
+ def main(args: Array[String]): Unit = {
+    val strings = List("apple", "cat", "banana", "dog", "elephant")
+    val processedStrings = processStrings(strings)
+    println(s"Processed strings: $processedStrings")
+   }
+ }
